@@ -59,4 +59,15 @@ public class Produto {
     public LocalDate getDataVencimento() {
         return dataVencimento;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "Nome: " + nome +
+                ", Descricao: " + descricao +
+                ", Preço R$: " + preco +
+                ", Data de fabricação: " + dataFabricacao +
+                ", Data de vencimento: " + dataVencimento +
+                '}';
+    }
 }
