@@ -1,7 +1,6 @@
 package br.com.mercado.service;
 
 import br.com.mercado.model.Compra;
-import br.com.mercado.model.MetodoPagamento;
 
 import java.math.BigDecimal;
 
