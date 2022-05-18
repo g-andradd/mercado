@@ -5,20 +5,25 @@ public class CaixaRegistradora {
     private final Long id;
 //    private Caixa caixa;
 
-    public CaixaRegistradora(Long id, Caixa caixa) {
+//    public CaixaRegistradora(Long id, Caixa caixa) {
+//        this.id = id;
+//        this.caixa = caixa;
+//    }
+
+
+    public CaixaRegistradora(Long id) {
         this.id = id;
-        this.caixa = caixa;
     }
 
     public Long getId() {
         return id;
     }
 
-    public Caixa getCaixa() {
-        return caixa;
-    }
-
-    public void setCaixa(Caixa caixa) {
-        this.caixa = caixa;
-    }
+//    public Caixa getCaixa() {
+//        return caixa;
+//    }
+//
+//    public void setCaixa(Caixa caixa) {
+//        this.caixa = caixa;
+//    }
 }
