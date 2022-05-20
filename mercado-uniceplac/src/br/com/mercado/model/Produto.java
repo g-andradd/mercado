@@ -60,6 +60,7 @@ public class Produto {
         return dataVencimento;
     }
 
+    //método toString para mostrar os valores do produto
     @Override
     public String toString() {
         return "Produto{" +
