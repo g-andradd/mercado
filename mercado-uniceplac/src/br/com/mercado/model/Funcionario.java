@@ -3,20 +3,17 @@ package br.com.mercado.model;
 public abstract class Funcionario {
 	
 	// criando as possíveis variáveis para serem utilizadas 
-	public String id;
+	public String Login;
+	public String Senha;
 	public String nome;
 	public String cpf;
 	public String idade;
 	public double salario;
 	
-	// construtor sem parâmetro
-	public Funcionario() {
-		
-	}
-	
 	// construtor com parâmetro
-	public Funcionario(String id, String nome, String cpf, String idade, double salario) {
-		this.id = id;
+	public Funcionario(String Login, String Senha, String nome, String cpf, String idade, double salario) {
+		this.Login = Login;
+		this.Senha = Senha;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
@@ -24,14 +21,6 @@ public abstract class Funcionario {
 	}
 
 	// gets and sets
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public String getNome() {
 		return nome;
 	}
