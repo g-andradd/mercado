@@ -1,21 +1,19 @@
 package br.com.mercado.model;
 
+import java.math.BigDecimal;
+
 public abstract class Funcionario {
 	
 	// criando as possíveis variáveis para serem utilizadas 
 	private Long id;
-	private String login;
-	private String senha;
 	private String nome;
 	private String cpf;
 	private String idade;
-	private double salario;
+	private BigDecimal salario;
 	
 	// construtor com parâmetro
-	public Funcionario(Long id, String login, String senha, String nome, String cpf, String idade, double salario) {
+	public Funcionario(Long id, String nome, String cpf, String idade, BigDecimal salario) {
 		this.id = id;
-		this.Login = login;
-		this.Senha = Senha;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
@@ -52,11 +50,11 @@ public abstract class Funcionario {
 		this.idade = idade;
 	}
 
-	public double getSalario() {
+	public BigDecimal getSalario() {
 		return salario;
 	}
 
-	public void setSalario(double salario) {
+	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
 	}
 }
