@@ -15,4 +15,10 @@ public class Estoque {
 		this.estoqueProdutos = estoqueProdutos;
 	}
 
+	@Override
+	public String toString() {
+		return "Estoque{" +
+				"estoqueProdutos=" + estoqueProdutos +
+				'}';
+	}
 }
