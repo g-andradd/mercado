@@ -5,11 +5,6 @@ public class CaixaRegistradora {
     private final Long id;
     private Caixa caixa;
 
-    public CaixaRegistradora(Long id, Caixa caixa) {
-        this.id = id;
-        this.caixa = caixa;
-    }
-
 
     public CaixaRegistradora(Long id) {
         this.id = id;
