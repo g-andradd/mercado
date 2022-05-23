@@ -1,22 +1,10 @@
 package br.com.mercado.service;
 
 import br.com.mercado.model.Compra;
-import br.com.mercado.model.Produto;
 
 import java.math.BigDecimal;
-import java.util.List;
 
-public class CompraService {
-
-    public void registraProdutoNaCompra(List<Produto> produtos, Produto produto, Integer quantidade){
-        if (quantidade > 1) {
-            for (int i = 0; i < quantidade; i++) {
-                produtos.add(produto);
-            }
-        } else {
-            produtos.add(produto);
-        }
-    }
+public class Pagamento {
 
     public static BigDecimal RecebePagamento(Compra compra, BigDecimal valor){
         //todo valor não pode ser menor que o preço da compra
@@ -27,10 +15,6 @@ public class CompraService {
             //lançar exception
         }
         return BigDecimal.ZERO;
-    }
-
-    public void finalizaCompra(Compra compra){
-
     }
 
 }
