@@ -1,6 +1,7 @@
 package br.com.mercado.teste;
 
 import br.com.mercado.model.*;
+import br.com.mercado.service.CompraFinalizada;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -34,7 +35,13 @@ public class TestaCompra {
 
         compra.setProduto(salgadinho, 2);
         System.out.println(compra.getPreco());
-        System.out.println(compra.getProdutos());
+        System.out.println(compra.getProdutos().size());
+
+        System.out.println(estoque.getEstoqueProdutos().get(0).getQuantidade());
+        CompraFinalizada.fazerBaixaNoEstoque(compra, estoque);
+        System.out.println(estoque.getEstoqueProdutos().get(0).getQuantidade());
+
+
 
     }
 
