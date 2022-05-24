@@ -1,14 +1,16 @@
 package br.com.mercado.model;
 
-public class RelatorioDoProduto {
+public class RelatorioDeProdutos {
 	private Produto produto;
 	private int quantidade;
-
-	public RelatorioDoProduto(Produto produto, int quantidade) {
+	
+	//construtor com paramêtros
+	public RelatorioDeProdutos(Produto produto, int quantidade) {
 		this.produto = produto;
 		this.quantidade = quantidade;
 	}
 
+	//getters e setters
 	public Produto getProduto() {
 		return produto;
 	}
@@ -25,11 +27,12 @@ public class RelatorioDoProduto {
 		this.quantidade = quantidade;
 	}
 
+	//método toString para exibir o relatório
 	@Override
 	public String toString() {
-		return "RelatorioDoProduto{" +
-				"produto=" + produto +
-				", quantidade=" + quantidade +
-				'}';
+		return " Relatório De Produtos \n" +
+				" \n " + produto +
+				"\n Quantidade: " + quantidade
+				;
 	}
 }

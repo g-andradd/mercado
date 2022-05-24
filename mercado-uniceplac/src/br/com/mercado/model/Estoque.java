@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estoque {
+	
+	//Cria uma lista de array do tipo relatório de produtos
+	List<RelatorioDeProdutos> estoqueProdutos = new ArrayList<>();
 
-	List<RelatorioDoProduto> estoqueProdutos = new ArrayList<>();
-
-	public List<RelatorioDoProduto> getEstoqueProdutos() {
+	//Getters e setters
+	public List<RelatorioDeProdutos> getEstoqueProdutos() {
 		return estoqueProdutos;
 	}
 
-	public void setEstoqueProdutos(List<RelatorioDoProduto> estoqueProdutos) {
+	public void setEstoqueProdutos(List<RelatorioDeProdutos> estoqueProdutos) {
 		this.estoqueProdutos = estoqueProdutos;
 	}
 
+	//Método toString para exibir o estoque
 	@Override
 	public String toString() {
-		return "Estoque{" +
-				"estoqueProdutos=" + estoqueProdutos +
-				'}';
+		return " " + estoqueProdutos
+				;
 	}
 }
