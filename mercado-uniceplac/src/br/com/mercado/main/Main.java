@@ -4,17 +4,14 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import br.com.mercado.model.Estoque;
 import br.com.mercado.model.Gerente;
 import br.com.mercado.model.Produto;
-import br.com.mercado.model.RelatorioDeProdutos;
+import br.com.mercado.model.RelatorioDoProduto;
 
-import java.math.BigDecimal;
-import javax.swing.JOptionPane;
 import br.com.mercado.model.Caixa;
 import br.com.mercado.model.CaixaRegistradora;
 import br.com.mercado.model.Funcionario;
@@ -29,9 +26,9 @@ public class Main {
 		Produto biscoito = new Produto(6L, "Biscopit sdog", "afhsgj", new BigDecimal("4"), LocalDate.now(),
 				LocalDate.now());
 
-		List<RelatorioDeProdutos> relatorioDeProdutos = new ArrayList<>();
+		List<RelatorioDoProduto> relatorioDeProdutos = new ArrayList<>();
 
-		relatorioDeProdutos.add(new RelatorioDeProdutos(biscoito, 40));
+		relatorioDeProdutos.add(new RelatorioDoProduto(biscoito, 40));
 
 		Estoque estoque = new Estoque();
 		estoque.setEstoqueProdutos(relatorioDeProdutos);
