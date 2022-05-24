@@ -1,10 +1,10 @@
 package br.com.mercado.model;
 
-public class RelatorioDeProdutos {
+public class RelatorioDoProduto {
 	private Produto produto;
 	private int quantidade;
 
-	public RelatorioDeProdutos(Produto produto, int quantidade) {
+	public RelatorioDoProduto(Produto produto, int quantidade) {
 		this.produto = produto;
 		this.quantidade = quantidade;
 	}
@@ -27,7 +27,7 @@ public class RelatorioDeProdutos {
 
 	@Override
 	public String toString() {
-		return "RelatorioDeProdutos{" +
+		return "RelatorioDoProduto{" +
 				"produto=" + produto +
 				", quantidade=" + quantidade +
 				'}';
