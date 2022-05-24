@@ -7,7 +7,6 @@ import java.util.List;
 
 public class ListaDeCompras {
     public BigDecimal registraProdutoNaCompra(List<Produto> produtos, Produto produto, Integer quantidade){
-        BigDecimal precoDaCompra = BigDecimal.ZERO;
         if (quantidade > 1) {
             for (int i = 0; i < quantidade; i++) {
                 produtos.add(produto);
@@ -15,6 +14,7 @@ public class ListaDeCompras {
         } else {
             produtos.add(produto);
         }
+        BigDecimal precoDaCompra = BigDecimal.ZERO;
         for(Produto produtoDaLista : produtos){
             precoDaCompra = produtoDaLista.getPreco().add(precoDaCompra);
         }
