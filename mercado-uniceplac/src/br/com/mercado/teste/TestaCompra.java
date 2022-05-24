@@ -15,10 +15,10 @@ public class TestaCompra {
         Produto salgadinho = new Produto(1L, "Salgadionho", "salgadinho de requijao",
                 new BigDecimal("3"), LocalDate.now(), LocalDate.now());
 
-        List<RelatorioDeProdutos> relatorioDeProdutos = new ArrayList<>();
+        List<RelatorioDoProduto> relatorioDeProdutos = new ArrayList<>();
 
-        relatorioDeProdutos.add(new RelatorioDeProdutos(biscoitoOreo, 50));
-        relatorioDeProdutos.add(new RelatorioDeProdutos(salgadinho, 50));
+        relatorioDeProdutos.add(new RelatorioDoProduto(biscoitoOreo, 50));
+        relatorioDeProdutos.add(new RelatorioDoProduto(salgadinho, 50));
 
         Estoque estoque = new Estoque();
         estoque.setEstoqueProdutos(relatorioDeProdutos);
