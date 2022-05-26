@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Estoque {
 	
-	//Cria uma lista de array do tipo relatório de produtos
+	//Cria uma lista de array do tipo relatÃ³rio de produtos
 	List<RelatorioDoProduto> estoqueProdutos = new ArrayList<>();
 
 	//Getters e setters
@@ -17,7 +17,7 @@ public class Estoque {
 		this.estoqueProdutos = estoqueProdutos;
 	}
 
-	//Método toString para exibir o estoque
+	//MÃ©todo toString para exibir o estoque
 	@Override
 	public String toString() {
 		return " " + estoqueProdutos

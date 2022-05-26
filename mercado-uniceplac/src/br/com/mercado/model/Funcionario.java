@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 
 public abstract class Funcionario {
 	
-	// criando as possÌveis vari·veis para serem utilizadas 
+	// criando as poss√≠veis vari√°veis para serem utilizadas 
 	private Long id;
 	private String nome;
 	private String cpf;
 	private String idade;
 	private BigDecimal salario;
 	
-	// construtor com par‚metro
+	// construtor com par√¢metro
 	public Funcionario(Long id, String nome, String cpf, String idade, BigDecimal salario) {
 		this.id = id;
 		this.nome = nome;

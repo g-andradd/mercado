@@ -1,122 +1,79 @@
 package br.com.mercado.main;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import br.com.mercado.model.*;
+import br.com.mercado.service.CaixaRegistradoraService;
+import br.com.mercado.service.CaixaService;
+import br.com.mercado.service.ProdutoService;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
-import br.com.mercado.model.Estoque;
-import br.com.mercado.model.Gerente;
-import br.com.mercado.model.Produto;
-import br.com.mercado.model.RelatorioDoProduto;
-
-import br.com.mercado.model.Caixa;
-import br.com.mercado.model.CaixaRegistradora;
-import br.com.mercado.model.Funcionario;
-
 public class Main {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+        Estoque estoque = new Estoque();
 
-		List<Caixa> caixas = new ArrayList<>();
-	
-		//Instanciando a classe Gerente e criando um objeto chamado gerente
-		Gerente gerente = new Gerente(6L, "sdfghsdh", "3454576578", "34", new BigDecimal("23456.7"), "geren",
-				"afdfg5s");
-		//Instanciando a classe produto e criando um produto chamado biscoito
-		Produto biscoito = new Produto(6L, "Biscopit sdog", "afhsgj", new BigDecimal("4"), LocalDate.now(),
-				LocalDate.now());
+        List<Produto> produtos = new ArrayList<>();
+        List<RelatorioDoProduto> relatorioDosProdutos = new ArrayList<>();
+        List<Gerente> gerentes = new ArrayList<>();
+        List<Caixa> caixas = new ArrayList<>();
+        List<CaixaRegistradora> caixasRegistradoras = new ArrayList<>();
 
-		List<RelatorioDoProduto> relatorioDeProdutos = new ArrayList<>();
+        //Preenchendo a lista de produto e colocando o relatorio dos produtos no estoque
+        SetRelatorioDeProdutosNoEstoque.adicionarProdutos(produtos, relatorioDosProdutos, estoque);
 
-		relatorioDeProdutos.add(new RelatorioDoProduto(biscoito, 40));
+        //Escolha de Caixa e Caixa Registradora
+        //criando as variaveis para checar de caixa e caixaReg foram criados
+        //comando de repeticao
+        int opcao;
+        do {
+            String[] acao = {"Criar Funcionário", "Criar Caixa Registradora", "Criar Produto", "Realizar Compra"};
+            String result = (String) JOptionPane.showInputDialog(null, "O que deseja Fazer?", "Criar objetos", JOptionPane.QUESTION_MESSAGE, null, acao, acao[0]);
+            if (result == null) {
+                //dialogo final
+                JOptionPane.showMessageDialog(null, "Cancelado", "Funcionario", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                switch (result) {
+                    case "Criar Funcionário" -> {
+                        OpcaoCriarFuncionario criarFuncionario = new OpcaoCriarFuncionario();
+                        String criar = criarFuncionario.mostrarOpcoes();
+                        if (criar == null) {
+                            //dialogo final
+                            JOptionPane.showMessageDialog(null, "Cancelado", "Funcionario", JOptionPane.INFORMATION_MESSAGE);
+                        } else if (criar.equals("Caixa")) {
+                            criarFuncionario.criarCaixa(caixas);
 
-		Estoque estoque = new Estoque();
-		estoque.setEstoqueProdutos(relatorioDeProdutos);
+                        } else if (criar.equals("Gerente")) {
+                            criarFuncionario.criarGerente(gerentes);
 
-		JOptionPane.showMessageDialog(null, " " + estoque, "Produtos do estoque", JOptionPane.PLAIN_MESSAGE);
-    
-		//Escolha de Caixa e Caixa Registradora
-				//criando as variaveis para checar de caixa e caixaReg foram criados
-				boolean x1 = false;
-				boolean x2 = false;
-				
-				//comando de repeticao
-				do {
-				//criando o vetor para escolha
-				String [] funcionarios = {"Caixa", "CaixaRegistradora", "Cancelar"};
-				Object result = JOptionPane.showInputDialog(null, "O que deseja criar?", "Criar objetos", JOptionPane.QUESTION_MESSAGE, null, funcionarios, funcionarios[0]);
-				
-				//caso o usu�rio cancelar
-				if (result == "Cancelar" || result == null) {
-					break;
-				}
-				
-				//criando o caixa
-				if(result == "Caixa" && !x1) {
-						//utilizando o swing para criar um funcionario
-				        int opcaoCaixa = JOptionPane.showConfirmDialog(null, "Deseja criar um Caixa?", "Criar um Caixa", JOptionPane.YES_NO_OPTION);
-				        if (opcaoCaixa == JOptionPane.YES_OPTION) {
-				          JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir", "Criar um Caixa", JOptionPane.INFORMATION_MESSAGE);
-				          String id = JOptionPane.showInputDialog("Insira o id:");
-				          String nome = JOptionPane.showInputDialog("Insira o nome:");
-				          String cpf = JOptionPane.showInputDialog("Insira o cpf:");
-				          String idade = JOptionPane.showInputDialog("Insira a idade:");
-				          String salario = JOptionPane.showInputDialog("Insira o salario:");
-				
-				          //transformar o id em long e o salario em bigdecimal
-				          Long idfinal = new Long(id);
-				          BigDecimal salariofinal = new BigDecimal(salario);
-				
-				          //criando um funcionario com os parametros certos
-				          Caixa caixa = new Caixa(idfinal, nome, cpf, idade, salariofinal);
-						  caixas.add(caixa);
-				
-				          //dialogo final
-				          JOptionPane.showMessageDialog(null, "O Funcionario-Caixa, foi criado com sucesso", "Criar um Caixa", JOptionPane.INFORMATION_MESSAGE);
-				          
-				          //confirma a criacao do caixa
-				          x1 = true;
-				          
-				          //operacao finalizada caso nao queira criar o funcionario caixa
-				        } else if (opcaoCaixa == JOptionPane.NO_OPTION) {
-				          JOptionPane.showMessageDialog(null, "Operacao Finalizada", "Criar um Caixa", JOptionPane.ERROR_MESSAGE);
-				        }
-				  //se o caixa j� foi criado, exibe a mensagem
-				} else if (result == "Caixa" && x1) {
-					JOptionPane.showMessageDialog(null, "Um Caixa j� foi criado!", "Criar um Caixa", JOptionPane.ERROR_MESSAGE);
-				}
-				
-				
-				// criando a caixaRegistradora	
-				if (result == "CaixaRegistradora" && !x2) {
-					
-				        //utilizando o swing para criar a caixa reg.
-				        int opcaoCaixaReg = JOptionPane.showConfirmDialog(null, "Deseja criar uma CaixaRegistradora?", "Criar uma Caixa Registradora", JOptionPane.YES_NO_OPTION);
-				        if (opcaoCaixaReg == JOptionPane.YES_OPTION){
-				          //inserindo 
-				          JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir", "Criar uma Caixa Registradora", JOptionPane.INFORMATION_MESSAGE);
-				          String id = JOptionPane.showInputDialog("Insira o id da Caixa Registradora:");
-				          Long idfinal = new Long(id);
-				          CaixaRegistradora CaixaReg01 = new CaixaRegistradora(idfinal);
-				          
-				          //confirma a criacao da caixa registradora
-				          x2 = true;
-				          
-				          //operacao cancelada, exibe a mensagem
-				        } else if (opcaoCaixaReg == JOptionPane.NO_OPTION) {
-				          JOptionPane.showMessageDialog(null, "Operacao Finalizada", "Criar um Caixa Registradora", JOptionPane.ERROR_MESSAGE);
-				        }
-				     //exibindo a mensagem caso j� foi criado uma caixa registradora   
-					} else if (result == "CaixaRegistradora" && x2) {
-						JOptionPane.showMessageDialog(null, "Uma Caixa Registradora j� foi criada!", "Criar uma Caixa Registradora", JOptionPane.ERROR_MESSAGE);
-					}
-				} 
-				while (!x1 || !x2);
-			}
-		
-	}
+                        }
+                    }
+                    case "Criar Caixa Registradora" -> {
+                        CaixaRegistradoraService caixaRegistradoraService = new CaixaRegistradoraService();
+                        CaixaRegistradora caixaRegistradora = caixaRegistradoraService.novo(caixasRegistradoras);
+                        if (caixaRegistradora != null) {
+                            caixasRegistradoras.add(caixaRegistradora);
+                        }
+                    }
+                    case "Criar Produto" -> {
+                        ProdutoService produtoService = new ProdutoService();
+                        Produto produto = produtoService.novo(produtos, relatorioDosProdutos);
+                        if (produto != null) {
+                            produtos.add(produto);
+                        }
+                    }
+                    default -> throw new IllegalStateException("Unexpected value: " + result);
+                }
+            }
+
+
+            opcao = JOptionPane.showConfirmDialog(null, "Deseja continuar?",
+                    null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        } while (opcao == JOptionPane.YES_OPTION);
+
+    }
+
+}
 
 	
 	

@@ -4,7 +4,7 @@ public class RelatorioDoProduto {
 	private Produto produto;
 	private int quantidade;
 	
-	//construtor com paramêtros
+	//construtor com paramÃªtros
 	public RelatorioDoProduto(Produto produto, int quantidade) {
 		this.produto = produto;
 		this.quantidade = quantidade;
@@ -27,10 +27,10 @@ public class RelatorioDoProduto {
 		this.quantidade = quantidade;
 	}
 
-	//método toString para exibir o relatório
+	//mÃ©todo toString para exibir o relatÃ³rio
 	@Override
 	public String toString() {
-		return " Relatório De Produtos \n" +
+		return " RelatÃ³rio De Produtos \n" +
 				" \n " + produto +
 				"\n Quantidade: " + quantidade
 				;

@@ -10,17 +10,13 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal preco;
-    private final LocalDate dataFabricacao;
-    private final LocalDate dataVencimento;
 
     //Método construtor do produto
-    public Produto(Long id, String nome, String descricao, BigDecimal preco, LocalDate dataFabricacao, LocalDate dataVencimento) {
+    public Produto(Long id, String nome, String descricao, BigDecimal preco) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
-        this.dataFabricacao = dataFabricacao;
-        this.dataVencimento = dataVencimento;
     }
 
     //Métodos get e set dos atributos do produto
@@ -52,14 +48,6 @@ public class Produto {
         this.preco = preco;
     }
 
-    public LocalDate getDataFabricacao() {
-        return dataFabricacao;
-    }
-
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
-    }
-
     //método toString para mostrar os valores do produto
     @Override
     public String toString() {
@@ -67,8 +55,6 @@ public class Produto {
                 "Nome: " + nome +
                 ", Descricao: " + descricao +
                 ", Preço R$: " + preco +
-                ", Data de fabricação: " + dataFabricacao +
-                ", Data de vencimento: " + dataVencimento +
                 '}';
     }
 }

@@ -12,9 +12,9 @@ public class TestaCompra {
     public static void main(String[] args) {
 
         Produto biscoitoOreo = new Produto(1L, "Biscoito Oreo", "Biscoito oreo com 6 biscoitos",
-                new BigDecimal("2"), LocalDate.now(), LocalDate.now());
+                new BigDecimal("2"));
         Produto salgadinho = new Produto(1L, "Salgadionho", "salgadinho de requijao",
-                new BigDecimal("3"), LocalDate.now(), LocalDate.now());
+                new BigDecimal("3"));
 
         List<RelatorioDoProduto> relatorioDeProdutos = new ArrayList<>();
 

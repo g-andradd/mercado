@@ -2,14 +2,14 @@ package br.com.mercado.model;
 
 import java.math.BigDecimal;
 
-//classe gerente herdando da classe funcion·rio
+//classe gerente herdando da classe funcion√°rio
 public class Gerente extends Funcionario{
 
 	//atributos privados
     private String login;
     private String senha;
 
-    //construtor para que sÛ seja possivel a criaÁ„o de um gerente utilizando os parametros abaixo
+    //construtor para que s√≥ seja possivel a cria√ß√£o de um gerente utilizando os parametros abaixo
     public Gerente(Long id, String nome, String cpf, String idade, BigDecimal salario, String login, String senha) {
         super(id, nome, cpf, idade, salario);
         this.login = login;
