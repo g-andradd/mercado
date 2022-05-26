@@ -1,7 +1,6 @@
 package br.com.mercado.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class Produto {
 

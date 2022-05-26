@@ -14,6 +14,8 @@ public class CompraFinalizada {
         List<RelatorioDoProduto> estoqueProdutos = estoque.getEstoqueProdutos();
         List<Produto> produtos = compra.getProdutos();
 
+        boolean feito = false;
+
         for (Produto produto : produtos) {
             for (RelatorioDoProduto relatorioDoProduto : estoqueProdutos) {
                 if (produto == relatorioDoProduto.getProduto()) {
@@ -23,8 +25,12 @@ public class CompraFinalizada {
                     }
 
                     relatorioDoProduto.setQuantidade(quantidadeAntiga - 1);
+                    feito = true;
                     break;
                 }
+            }
+            if (feito){
+                break;
             }
         }
 

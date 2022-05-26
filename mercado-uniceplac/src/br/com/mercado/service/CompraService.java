@@ -33,7 +33,7 @@ public class CompraService {
                     null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(finalizar == JOptionPane.YES_OPTION){
                 String valor = JOptionPane.showInputDialog("O preço da compra foi R$" + compra.getPreco() + ", Digite o valor do pagamento");
-                BigDecimal troco = Pagamento.RecebePagamento(compra, new BigDecimal(valor));
+                BigDecimal troco = Pagamento.recebePagamento(compra, new BigDecimal(valor));
                 JOptionPane.showMessageDialog(null, "Valor do troco: R$" + troco, "Compra", JOptionPane.INFORMATION_MESSAGE);
 
                 CompraFinalizada.fazerBaixaNoEstoque(compra, estoque);

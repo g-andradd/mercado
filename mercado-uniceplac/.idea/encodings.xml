@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/main/SetRelatorioDeProdutosNoEstoque.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/main/SwitchResult.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/Caixa.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/CaixaRegistradora.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/Estoque.java" charset="UTF-8" />

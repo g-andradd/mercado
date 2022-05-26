@@ -4,7 +4,6 @@ import br.com.mercado.model.*;
 import br.com.mercado.service.CompraFinalizada;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

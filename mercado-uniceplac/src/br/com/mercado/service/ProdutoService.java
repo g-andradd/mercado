@@ -1,6 +1,5 @@
 package br.com.mercado.service;
 
-import br.com.mercado.model.Caixa;
 import br.com.mercado.model.Produto;
 import br.com.mercado.model.RelatorioDoProduto;
 
