@@ -41,7 +41,7 @@ public class CompraService {
                 BigDecimal troco = Pagamento.recebePagamento(compra, new BigDecimal(valor));
                 JOptionPane.showMessageDialog(null, "Valor do troco: R$" + troco, "Compra", JOptionPane.INFORMATION_MESSAGE);
 
-                CompraFinalizada.fazerBaixaNoEstoque(compra, estoque);
+                CompraFinalizada.fazerBaixaNoEstoque(compra, estoque, quantidade);
             }
         } while (finalizar == JOptionPane.NO_OPTION);
     }

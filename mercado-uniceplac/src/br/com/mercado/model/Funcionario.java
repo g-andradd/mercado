@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public abstract class Funcionario {
 	
-	// criando as possíveis variáveis para serem utilizadas 
+	// criando os atributos para serem utilizadas
 	private Long id;
 	private String nome;
 	private String cpf;

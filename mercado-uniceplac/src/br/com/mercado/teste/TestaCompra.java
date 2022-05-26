@@ -32,12 +32,14 @@ public class TestaCompra {
 
         System.out.println(compra.getPreco());
 
+        int quantidade = 53;
+
         compra.setProduto(salgadinho, 2);
         System.out.println(compra.getPreco());
         System.out.println(compra.getProdutos().size());
 
         System.out.println(estoque.getEstoqueProdutos().get(0).getQuantidade());
-        CompraFinalizada.fazerBaixaNoEstoque(compra, estoque);
+        CompraFinalizada.fazerBaixaNoEstoque(compra, estoque, quantidade);
         System.out.println(estoque.getEstoqueProdutos().get(0).getQuantidade());
 
 
