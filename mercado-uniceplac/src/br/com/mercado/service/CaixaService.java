@@ -15,7 +15,9 @@ public class CaixaService{
         if (opcaoCaixa == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir", "Criar um Caixa", JOptionPane.INFORMATION_MESSAGE);
             Long id = Long.parseLong(JOptionPane.showInputDialog("Insira o id:"));
-            if (verificar(caixas, id)){
+
+            //se o id já existe, retorna null
+            if (verificarId(caixas, id)){
                 return null;
             }
             String nome = JOptionPane.showInputDialog("Insira o nome:");
@@ -23,7 +25,7 @@ public class CaixaService{
             String idade = JOptionPane.showInputDialog("Insira a idade:");
             String salario = JOptionPane.showInputDialog("Insira o salario:");
 
-            //criando um funcionario com os parametros certos
+            //criando um funcionario
             Caixa caixa = new Caixa(id, nome, cpf, idade, new BigDecimal(salario));
 
             //dialogo final
@@ -37,7 +39,8 @@ public class CaixaService{
 
     }
 
-    private boolean verificar(List<Caixa> caixas, Long id) {
+    //Metodo que verifica se o id já existe
+    private boolean verificarId(List<Caixa> caixas, Long id) {
         for (Caixa caixa : caixas) {
             if (caixa.getId().equals(id)){
                 JOptionPane.showMessageDialog(null, "Esse caixa já existe",

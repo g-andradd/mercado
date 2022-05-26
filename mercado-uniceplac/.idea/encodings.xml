@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/br/com/mercado/main/SetRelatorioDeProdutosNoEstoque.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/funcionalidades/CompraFinalizada.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/funcionalidades/CompraFinalizada.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/funcionalidades/Pagamento.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/funcionalidades/Pagamento.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/br/com/mercado/main/PopularListaDeProdutos.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/main/SwitchResult.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/Caixa.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/CaixaRegistradora.java" charset="UTF-8" />
@@ -11,13 +15,11 @@
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/model/RelatorioDoProduto.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/CaixaRegistradoraService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/CaixaService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/CompraFinalizada.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/CompraService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/GerenteService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/ListaDeCompras.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/OpcaoCriarFuncionario.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/OpcaoCriarFuncionario.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/Pagamento.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/service/ProdutoService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/teste/TestaCompra.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/br/com/mercado/validacao/MaiorQueEstoqueException.java" charset="UTF-8" />

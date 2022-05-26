@@ -17,10 +17,12 @@ public class ProdutoService {
             JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir", "Criar um Produto", JOptionPane.INFORMATION_MESSAGE);
 
             Long id = Long.valueOf(JOptionPane.showInputDialog("Insira o ID do produto: "));
-            if (verificar(produtos, id)){
+            //se id existir, incrementa quantidade
+            if (verificarId(produtos, id)){
                 quantidade = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade desejada: "));
                 adicionarQuantidade(relatorioDosProdutos, produtos, quantidade);
                 return null;
+                //se nao existir, cria um produto novo e já coloca esse produto no relatorio de produtos do estoque
             }else {
                 Produto produto = criarProduto(id);
 
@@ -34,12 +36,14 @@ public class ProdutoService {
             }
 
         } else {
+            //opção de cancelar
             JOptionPane.showMessageDialog(null, "Operacao Finalizada", "Criar um Produto", JOptionPane.ERROR_MESSAGE);
             return null;
         }
 
     }
 
+    //criacao do produto
     public Produto criarProduto(Long id){
         String nome = JOptionPane.showInputDialog("Insira o nome do produto: ");
         String descricao = JOptionPane.showInputDialog("Insira a descrição do produto: ");
@@ -49,7 +53,8 @@ public class ProdutoService {
         return new Produto(id, nome, descricao, new BigDecimal(preco));
     }
 
-    private boolean verificar(List<Produto> produtos, Long id) {
+    //Verifica se já tem aquele id, e se existir, incrementa uma quantidade naquele produto
+    private boolean verificarId(List<Produto> produtos, Long id) {
         for (Produto produto : produtos) {
             if (produto.getId().equals(id)){
                 JOptionPane.showMessageDialog(null, "Produto encontrado, Inserir quantidade extra",

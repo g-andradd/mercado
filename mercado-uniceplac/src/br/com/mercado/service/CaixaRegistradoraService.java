@@ -15,7 +15,9 @@ public class CaixaRegistradoraService {
             JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir",
                     "Criar uma Caixa Registradora", JOptionPane.INFORMATION_MESSAGE);
             Long id = Long.valueOf(JOptionPane.showInputDialog("Insira o id da Caixa Registradora:"));
-            if (verificar(registradoraList, id)){
+
+            //se id já existe retorna null
+            if (verificarId(registradoraList, id)){
                 return null;
             }
 
@@ -27,13 +29,15 @@ public class CaixaRegistradoraService {
             return caixaRegistradora;
 
         } else {
+            //Mensagem de cancelamento da criação da caixa registradora
             JOptionPane.showMessageDialog(null, "Operacao Finalizada",
                     "Criar um Caixa Registradora", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }
 
-    private boolean verificar(List<CaixaRegistradora> registradoraList, Long id) {
+    //metodo que verifica se o id já existe
+    private boolean verificarId(List<CaixaRegistradora> registradoraList, Long id) {
         for (CaixaRegistradora caixaRegistradora : registradoraList) {
             if (caixaRegistradora.getId().equals(id)){
                 JOptionPane.showMessageDialog(null, "Essa caixa registrafora já existe",

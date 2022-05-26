@@ -1,4 +1,4 @@
-package br.com.mercado.service;
+package br.com.mercado.funcionalidades;
 
 import br.com.mercado.model.Compra;
 import br.com.mercado.validacao.ValorMenorQueACompraException;

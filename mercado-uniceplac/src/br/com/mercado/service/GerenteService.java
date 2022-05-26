@@ -15,7 +15,8 @@ public class GerenteService {
             JOptionPane.showMessageDialog(null, "Insira as informacoes a seguir", "Criar um Gerente", JOptionPane.INFORMATION_MESSAGE);
 
             Long id = Long.valueOf(JOptionPane.showInputDialog("Insira o ID: "));
-            if (verificar(gerentes, id)){
+            //se o id existir retorna null
+            if (verificarId(gerentes, id)){
                 return null;
             }
             String nome = JOptionPane.showInputDialog("Insira o nome: ");
@@ -39,7 +40,8 @@ public class GerenteService {
 
     }
 
-    private boolean verificar(List<Gerente> gerentes, Long id) {
+    //verifica se o id já existe
+    private boolean verificarId(List<Gerente> gerentes, Long id) {
         for (Gerente gerente : gerentes) {
             if (gerente.getId().equals(id)){
                 JOptionPane.showMessageDialog(null, "Esse gerente já existe",

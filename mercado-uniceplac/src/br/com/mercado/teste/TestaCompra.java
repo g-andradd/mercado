@@ -1,7 +1,7 @@
 package br.com.mercado.teste;
 
 import br.com.mercado.model.*;
-import br.com.mercado.service.CompraFinalizada;
+import br.com.mercado.funcionalidades.CompraFinalizada;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

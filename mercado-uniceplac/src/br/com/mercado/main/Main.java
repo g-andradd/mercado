@@ -31,10 +31,11 @@ public class Main {
                 //dialogo Cancelar
                 JOptionPane.showMessageDialog(null, "Cancelado", "Funcionario", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                //chama o metodo que faz o switch case de acordo com a variavel result
+                //chama o metodo que faz o switch-case de acordo com a variavel result
                 SwitchResult.fazerSwitchCase(result, caixas, gerentes, caixasRegistradoras, produtos, relatorioDosProdutos, estoque);
             }
 
+            //verifica se para ou continua
             opcao = JOptionPane.showConfirmDialog(null, "Deseja continuar?",
                     null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         } while (opcao == JOptionPane.YES_OPTION);
