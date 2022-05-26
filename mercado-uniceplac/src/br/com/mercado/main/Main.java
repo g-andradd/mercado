@@ -18,6 +18,8 @@ import br.com.mercado.model.Funcionario;
 
 public class Main {
 	public static void main(String[] args) {
+
+		List<Caixa> caixas = new ArrayList<>();
 	
 		//Instanciando a classe Gerente e criando um objeto chamado gerente
 		Gerente gerente = new Gerente(6L, "sdfghsdh", "3454576578", "34", new BigDecimal("23456.7"), "geren",
@@ -46,13 +48,13 @@ public class Main {
 				String [] funcionarios = {"Caixa", "CaixaRegistradora", "Cancelar"};
 				Object result = JOptionPane.showInputDialog(null, "O que deseja criar?", "Criar objetos", JOptionPane.QUESTION_MESSAGE, null, funcionarios, funcionarios[0]);
 				
-				//caso o usuário cancelar
-				if (result == "Cancelar") {
+				//caso o usuï¿½rio cancelar
+				if (result == "Cancelar" || result == null) {
 					break;
 				}
 				
 				//criando o caixa
-				if(result == "Caixa" && x1 == false) {
+				if(result == "Caixa" && !x1) {
 						//utilizando o swing para criar um funcionario
 				        int opcaoCaixa = JOptionPane.showConfirmDialog(null, "Deseja criar um Caixa?", "Criar um Caixa", JOptionPane.YES_NO_OPTION);
 				        if (opcaoCaixa == JOptionPane.YES_OPTION) {
@@ -68,7 +70,8 @@ public class Main {
 				          BigDecimal salariofinal = new BigDecimal(salario);
 				
 				          //criando um funcionario com os parametros certos
-				          Funcionario FunCaixa01 = new Caixa(idfinal, nome, cpf, idade, salariofinal);
+				          Caixa caixa = new Caixa(idfinal, nome, cpf, idade, salariofinal);
+						  caixas.add(caixa);
 				
 				          //dialogo final
 				          JOptionPane.showMessageDialog(null, "O Funcionario-Caixa, foi criado com sucesso", "Criar um Caixa", JOptionPane.INFORMATION_MESSAGE);
@@ -80,14 +83,14 @@ public class Main {
 				        } else if (opcaoCaixa == JOptionPane.NO_OPTION) {
 				          JOptionPane.showMessageDialog(null, "Operacao Finalizada", "Criar um Caixa", JOptionPane.ERROR_MESSAGE);
 				        }
-				  //se o caixa já foi criado, exibe a mensagem
-				} else if (result == "Caixa" && x1 == true) {
-					JOptionPane.showMessageDialog(null, "Um Caixa já foi criado!", "Criar um Caixa", JOptionPane.ERROR_MESSAGE);
+				  //se o caixa jï¿½ foi criado, exibe a mensagem
+				} else if (result == "Caixa" && x1) {
+					JOptionPane.showMessageDialog(null, "Um Caixa jï¿½ foi criado!", "Criar um Caixa", JOptionPane.ERROR_MESSAGE);
 				}
 				
 				
 				// criando a caixaRegistradora	
-				if (result == "CaixaRegistradora" && x2 == false) {
+				if (result == "CaixaRegistradora" && !x2) {
 					
 				        //utilizando o swing para criar a caixa reg.
 				        int opcaoCaixaReg = JOptionPane.showConfirmDialog(null, "Deseja criar uma CaixaRegistradora?", "Criar uma Caixa Registradora", JOptionPane.YES_NO_OPTION);
@@ -105,12 +108,12 @@ public class Main {
 				        } else if (opcaoCaixaReg == JOptionPane.NO_OPTION) {
 				          JOptionPane.showMessageDialog(null, "Operacao Finalizada", "Criar um Caixa Registradora", JOptionPane.ERROR_MESSAGE);
 				        }
-				     //exibindo a mensagem caso já foi criado uma caixa registradora   
-					} else if (result == "CaixaRegistradora" && x2 == true) {
-						JOptionPane.showMessageDialog(null, "Uma Caixa Registradora já foi criada!", "Criar uma Caixa Registradora", JOptionPane.ERROR_MESSAGE);
+				     //exibindo a mensagem caso jï¿½ foi criado uma caixa registradora   
+					} else if (result == "CaixaRegistradora" && x2) {
+						JOptionPane.showMessageDialog(null, "Uma Caixa Registradora jï¿½ foi criada!", "Criar uma Caixa Registradora", JOptionPane.ERROR_MESSAGE);
 					}
 				} 
-				while (x1 == false || x2 == false);
+				while (!x1 || !x2);
 			}
 		
 	}
