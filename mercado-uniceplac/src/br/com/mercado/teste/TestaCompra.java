@@ -29,7 +29,7 @@ public class TestaCompra {
         CaixaRegistradora caixaRegistradora = new CaixaRegistradora(1L);
 
         Compra compra = new Compra(caixaRegistradora);
-        compra.setProduto(biscoitoOreo, 2);
+        compra.setProduto(biscoitoOreo, 52);
 
         System.out.println(compra.getPreco());
 

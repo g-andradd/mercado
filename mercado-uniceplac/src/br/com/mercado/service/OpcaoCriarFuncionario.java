@@ -1,9 +1,7 @@
-package br.com.mercado.main;
+package br.com.mercado.service;
 
 import br.com.mercado.model.Caixa;
 import br.com.mercado.model.Gerente;
-import br.com.mercado.service.CaixaService;
-import br.com.mercado.service.GerenteService;
 
 import javax.swing.*;
 import java.util.List;
@@ -32,4 +30,5 @@ public class OpcaoCriarFuncionario {
             gerentes.add(gerente);
         }
     }
+
 }

@@ -21,4 +21,10 @@ public class CaixaRegistradora {
     public void setCaixa(Caixa caixa) {
         this.caixa = caixa;
     }
+
+    @Override
+    public String toString() {
+        return "Caixa Registradora: " + id +
+                ", Caixa: " + caixa;
+    }
 }

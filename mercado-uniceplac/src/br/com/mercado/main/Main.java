@@ -1,12 +1,12 @@
 package br.com.mercado.main;
 
 import br.com.mercado.model.*;
-import br.com.mercado.service.CaixaRegistradoraService;
-import br.com.mercado.service.CaixaService;
-import br.com.mercado.service.ProdutoService;
+import br.com.mercado.service.*;
 
 import javax.swing.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -61,6 +61,16 @@ public class Main {
                         if (produto != null) {
                             produtos.add(produto);
                         }
+                    }
+                    case "Realizar Compra" -> {
+                        if (caixasRegistradoras.isEmpty()){
+                            JOptionPane.showMessageDialog(null, "Primeiro crie uma Caixa Registradora", "Compra", JOptionPane.INFORMATION_MESSAGE);
+                            break;
+                        }
+                        CompraService compraService = new CompraService();
+                        Compra compra = compraService.criarACompra(caixasRegistradoras);
+                        compraService.fazerACompra(produtos, compra, estoque);
+
                     }
                     default -> throw new IllegalStateException("Unexpected value: " + result);
                 }

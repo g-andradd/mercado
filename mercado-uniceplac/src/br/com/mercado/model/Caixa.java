@@ -9,12 +9,8 @@ public class Caixa extends Funcionario{
 		super(id, nome, cpf, idade, salario);
 	}
 	
-	// Método para inserção de Login e Senha;
+	// TODO fazer método para inserção de Login e Senha;
 	public void LoginCaixaReg(String Login, String Senha) {
-		System.out.println("- Para entrar na caixa registradora, necessita-se de um login e senha -");
-		System.out.println("Insira o seu Login:");
-//		this.Login = Login;
-		System.out.println("Insira a sua Senha:");
-//		this.Senha = Senha;
+
 	}
 }
