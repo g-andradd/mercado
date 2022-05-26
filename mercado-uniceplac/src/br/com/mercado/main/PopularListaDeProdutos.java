@@ -7,7 +7,7 @@ import br.com.mercado.model.RelatorioDoProduto;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class SetRelatorioDeProdutosNoEstoque {
+public class PopularListaDeProdutos {
 
     public static void adicionarProdutos(List<Produto> produtos, List<RelatorioDoProduto> relatorioDoProdutos, Estoque estoque){
 

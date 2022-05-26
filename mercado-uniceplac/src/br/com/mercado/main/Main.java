@@ -17,7 +17,7 @@ public class Main {
         List<CaixaRegistradora> caixasRegistradoras = new ArrayList<>();
 
         //Preenchendo a lista de produto e colocando o relatorio dos produtos no estoque
-        SetRelatorioDeProdutosNoEstoque.adicionarProdutos(produtos, relatorioDosProdutos, estoque);
+        PopularListaDeProdutos.adicionarProdutos(produtos, relatorioDosProdutos, estoque);
 
         //comando de repeticao
         int opcao;
