@@ -22,9 +22,10 @@ public class SwitchResult {
                 //se cair no null significa que cancelou
                 if (criar == null) {
                     //dialogo final
-                    JOptionPane.showMessageDialog(null, "Cancelado", "Funcionario", JOptionPane.INFORMATION_MESSAGE);
-                    //cria caixa
+                    JOptionPane.showMessageDialog(null, "Cancelado",
+                            "Funcionario", JOptionPane.INFORMATION_MESSAGE);
                 } else if (criar.equals("Caixa")) {
+                    //cria caixa
                     criarFuncionario.criarCaixa(caixas);
 
                     //cria gerente
